@@ -19,10 +19,17 @@ centerDiv.addEventListener("mousemove", throttleFunction((el) => {
    var div = document.createElement("div");
    div.classList.add("card")
 
+   var img = document.createElement("img")
+   img.setAttribute("src", "https://i.pinimg.com/1200x/e9/e7/9c/e9e79ca4e809255eb48e2fa43bc69637.jpg")
+   div.appendChild(img)
+
    div.style.left = el.clientX +'px';
    div.style.top = el.clientY +'px';
 
    mainDiv.appendChild(div)
+   setTimeout(function() {
+    div.remove();
+   }, 2000)
 
 }, 400)
 );
